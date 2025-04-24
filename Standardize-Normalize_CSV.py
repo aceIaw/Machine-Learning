@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load the CSV file
-file_path = r"C:\Users\RS10\Downloads\chemin_vers_le_fichier.csv"
+file_path = "RAW_DATA.csv"
 df = pd.read_csv(file_path, header=None)  # Use header=None if the file has no header
 
 # Rename columns from 1 to 7
@@ -36,7 +36,7 @@ for col in sensor_columns:
 
 # Save the final result
 output_suffix = "Standardize" if standardize else "Normalize" if normalize else "Processed"
-output_path = fr"C:\Users\RS10\Downloads\{output_suffix}.csv"
+output_path = f"{output_suffix}.csv"
 df.to_csv(output_path, index=False)
 
 # Print statistics
