@@ -70,14 +70,14 @@ def user_independent(sequences, k=1): # We compute k = 1 to just compare the seq
         all_y_true.extend(y_true) # Adds the true labels to a list
         all_y_pred.extend(y_pred) # Adds the predicted labels to a list
 
-    print("User-Independent Accuracy: {:.2f}% ± {:.2f}".format(
+    print("DTW User-Independent Accuracy: {:.2f}% ± {:.2f}".format(
         100*np.mean(accuracies), 100*np.std(accuracies))) #Calculates the mean and sd of the total accuracies
 
     labels = sorted(set(all_y_true + all_y_pred)) # Remove duplicates from the true and predicted labels and sort them
     confusion = confusion_matrix(all_y_true, all_y_pred, labels=labels) # Determine the axis and labels of the confusion matrix
     display = ConfusionMatrixDisplay(confusion_matrix=confusion, display_labels=labels)
     display.plot(xticks_rotation=45, cmap="Blues")
-    plt.title("User-Independent Confusion Matrix")
+    plt.title("DTW User-Independent Confusion Matrix")
     plt.show()
 
     return accuracies
@@ -124,14 +124,14 @@ def user_dependent(sequences, k=1):
             all_y_true.extend(y_true) # Adds the true labels to a list
             all_y_pred.extend(y_pred) # Adds the predicted labels to a list
 
-    print("User-Dependent Accuracy: {:.2f}% ± {:.2f}".format(
+    print("DTW User-Dependent Accuracy: {:.2f}% ± {:.2f}".format(
         100 * np.mean(accuracies), 100 * np.std(accuracies))) #Calculates the mean and sd of the total accuracies
 
     labels = sorted(set(all_y_true + all_y_pred)) # Remove duplicates from the true and predicted labels and sort them
     cm = confusion_matrix(all_y_true, all_y_pred, labels=labels) # Determine the axis and labels of the confusion matrix
     disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=labels)
     disp.plot(xticks_rotation=45, cmap="Oranges")
-    plt.title("User-Dependent Confusion Matrix")
+    plt.title("DTW User-Dependent Confusion Matrix")
     plt.show()
 
     return accuracies
