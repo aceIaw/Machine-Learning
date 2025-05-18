@@ -77,6 +77,9 @@ def user_independent(sequences, k=1): # We compute k = 1 to just compare the seq
     confusion = confusion_matrix(all_y_true, all_y_pred, labels=labels) # Determine the axis and labels of the confusion matrix
     display = ConfusionMatrixDisplay(confusion_matrix=confusion, display_labels=labels)
     display.plot(xticks_rotation=45, cmap="Blues")
+
+    plt.xlabel("Predicted Gesture")
+    plt.ylabel("True Gesture")
     plt.title("DTW User-Independent Confusion Matrix")
     plt.show()
 
@@ -131,6 +134,9 @@ def user_dependent(sequences, k=1):
     cm = confusion_matrix(all_y_true, all_y_pred, labels=labels) # Determine the axis and labels of the confusion matrix
     disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=labels)
     disp.plot(xticks_rotation=45, cmap="Oranges")
+
+    plt.xlabel("Predicted Gesture")
+    plt.ylabel("True Gesture")
     plt.title("DTW User-Dependent Confusion Matrix")
     plt.show()
 
