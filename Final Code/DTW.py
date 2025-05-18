@@ -12,16 +12,17 @@ run_user_independent = False
 run_user_dependent = False
 
 #Read the CSV file
-df = pd.read_csv(r"C:\Users\RS10\Documents\Python\Master Inge\Machine learning\Projet\raw_data_with_columns.csv")
+df = pd.read_csv()
 
 # Extract the user, gesture, and sequence columns
-def extract_sequences(df): # Focus on sequances by placing them in a dictionary and grouping them by user and gesture
+def extract_sequences(df): # Focus on sequences by placing them in a dictionary and grouping them by user and gesture
     sequences = defaultdict(list)  # Initiate a dictionary that will hold sequences for each user and gesture
     for (user, gesture, sequence_id), group in df.groupby(['user', 'gesture', 'sequence']): # Groups rows by user, gesture, and sequence
         sequence_data = group[['x', 'y', 'z']].to_numpy() # Converts the x, y, z columns to a numpy array to facilitate calculations for the DTW algorithm
         sequence_data -= np.mean(sequence_data, axis=0) # Normalizes the sequence data by subtracting the mean
         sequences[(user, gesture)].append(sequence_data) # Appends the normalized sequence data to the dictionary under the corresponding user and gesture
     return sequences
+
 
 # DTW distance function
 def dtw_distance(seq1, seq2): # Builds a DTW matrix by calculating the distance between two sequences
