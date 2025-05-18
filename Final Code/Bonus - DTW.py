@@ -112,7 +112,7 @@ def evaluate_user_independent_with_conf_matrix(sequences, k=1): # We compute k =
     confusion = confusion_matrix(all_y_true, all_y_pred, labels=labels) # Determine the axis and labels of the confusion matrix
     display = ConfusionMatrixDisplay(confusion_matrix=confusion, display_labels=labels)
     display.plot(xticks_rotation=45, cmap="Blues")
-    plt.title("Confusion Matrix User-Independent")
+    plt.title("DTW Confusion Matrix User-Independent")
     plt.show()
 
     return accuracies
@@ -166,7 +166,7 @@ def evaluate_leave_one_sample_per_gesture_out(sequences, k=1):
     cm = confusion_matrix(all_y_true, all_y_pred, labels=labels) # Determine the axis and labels of the confusion matrix
     disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=labels)
     disp.plot(xticks_rotation=45, cmap="Oranges")
-    plt.title("Confusion Matrix (Leave-One-Gesture-Sample-Out CV)")
+    plt.title("DTW Confusion Matrix (Leave-One-Gesture-Sample-Out CV)")
     plt.show()
 
     return accuracies
