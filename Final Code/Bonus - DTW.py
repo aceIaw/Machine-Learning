@@ -14,7 +14,7 @@ run_user_independent_cv = False
 run_user_dependent_cv = False
 
 #Read the CSV file
-df = pd.read_csv(r"C:\Users\RS10\Documents\Python\Master Inge\Machine learning\Projet\raw_data_with_columns.csv")
+df = pd.read_csv()
 
 # Extract the user, gesture, and sequence columns
 def extract_sequences(df): # Focus on sequences by placing them in a dictionary and grouping them by user and gesture
