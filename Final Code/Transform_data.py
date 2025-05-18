@@ -1,8 +1,7 @@
 import pandas as pd
 
 # Load the CSV file
-file_path = r"Master Inge/Machine learning/Projet/raw_data.csv"
-df = pd.read_csv(file_path, header=None)  # Use header=None if the file has no header
+df = pd.read_csv()  # Use header=None if the file has no header
 
 # Rename columns from 1 to 7
 df.columns = ['user', 'gesture', 'sequence', 'x', 'y', 'z', 'time']
