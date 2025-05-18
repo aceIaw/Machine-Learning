@@ -1,0 +1,35 @@
+Why subtracting the mean?
+
+In order to facilitate comparison between sequences that are drawn in different positions by matching their positions.
+
+--------------------------------------------------------
+
+Why not dividing by the standard deviation?
+
+Problematic because the length of the sequences wouldn't matter anymore, however, this is essential for the DTW algorithm because it uses sequence lengths to classify.
+
+--------------------------------------------------------
+
+Why do we do m+1 and n+1 when setting up the DTW matrix?
+
+This is useful for the first iteration, the algorithm works by looking back in time to previous values, which would not work without doing this.
+
+--------------------------------------------------------
+
+Why do we fill the DTW matrix with infinity?
+
+It is required to make sure that when we are running the algorithm and it's comparing the previous neighbours (top, left, and diagonal), the shortest path is always used.
+
+--------------------------------------------------------
+
+Why do we choose k = 1 for the cross validation?
+
+It is faster, better accuracy in smaller datasets, and we would have had to use k=3 (not even) to avoid ties instead, which would take longer.
+
+--------------------------------------------------------
+
+
+
+
+
+
