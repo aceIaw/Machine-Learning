@@ -14,7 +14,7 @@ from tqdm import tqdm
 
 
 
-run_LTSM_user_dependent = True
+run_LSTM_user_dependent = True
 
 
 
