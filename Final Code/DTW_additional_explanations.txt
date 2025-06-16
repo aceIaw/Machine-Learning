@@ -28,8 +28,6 @@ It is faster, better accuracy in smaller datasets, and we would have had to use 
 
 --------------------------------------------------------
 
+Why do you think that the DTW algorithm performs better than the lSTM algorithm?
 
-
-
-
-
+DTW works well with smaller datasets where it directly compares the sequences, compared to the LSTM that has to be trained and needs more data, DTW is also better for time alignment of gestures. LSTM has many parameters and might overfit small datasets compared to DTW.
